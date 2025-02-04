@@ -14,8 +14,8 @@ services:
     volumes:
       - ./openvpn-data:/etc/openvpn
     environment:
-      - OVPN_SERVER_URL=udp://81.31.245.200
-      - OVPN_CN=81.31.245.200
+      - OVPN_SERVER_URL=udp://90.156.228.142
+      - OVPN_CN=90.156.228.142
       - OVPN_PROTO=udp
       - OVPN_NAT=1
     restart: always
