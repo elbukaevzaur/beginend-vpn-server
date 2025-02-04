@@ -4,8 +4,11 @@ services:
   openvpn:
     image: kylemanna/openvpn
     container_name: openvpn
+#    privileged: true
     cap_add:
       - NET_ADMIN
+    devices:
+      - /dev/net/tun:/dev/net/tun
     ports:
       - "1194:1194/udp"
     volumes:
