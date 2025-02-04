@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  openvpn:
+    image: kylemanna/openvpn
+    container_name: openvpn
+    cap_add:
+      - NET_ADMIN
+    ports:
+      - "1194:1194/udp"
+    volumes:
+      - ./openvpn-data:/etc/openvpn
+    environment:
+      - OVPN_SERVER_URL=udp://ВАШ_IP_ИЛИ_ДОМЕН
+      - OVPN_CN=ВАШ_IP_ИЛИ_ДОМЕН
+      - OVPN_PROTO=udp
+      - OVPN_NAT=1
+    restart: always
